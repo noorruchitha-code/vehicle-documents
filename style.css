@@ -1,0 +1,789 @@
+/* ==========================================
+   GENERAL
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background-color: #f4f7fb;
+
+    color: #182230;
+
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #173b7a,
+            #315fbb
+        );
+
+    color: white;
+
+    padding: 35px 7%;
+
+}
+
+
+.header-content {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.tag {
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+
+}
+
+
+header h1 {
+
+    margin: 0 0 10px;
+
+    font-size: 34px;
+
+}
+
+
+header p {
+
+    margin: 0;
+
+    opacity: 0.9;
+
+}
+
+
+.header-icon {
+
+    font-size: 70px;
+
+}
+
+
+/* ==========================================
+   MAIN
+   ========================================== */
+
+main {
+
+    width: 92%;
+
+    max-width: 1100px;
+
+    margin: 30px auto;
+
+}
+
+
+/* ==========================================
+   DASHBOARD
+   ========================================== */
+
+.dashboard-section {
+
+    margin-bottom: 25px;
+
+}
+
+
+.section-title h2 {
+
+    margin-bottom: 5px;
+
+}
+
+
+.section-title p {
+
+    color: #667085;
+
+    margin-top: 0;
+
+}
+
+
+.dashboard {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.box {
+
+    background-color: white;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0, 0, 0, 0.06);
+
+}
+
+
+.box-icon {
+
+    font-size: 30px;
+
+}
+
+
+.box h3 {
+
+    margin: 0 0 8px;
+
+    font-size: 14px;
+
+    color: #667085;
+
+}
+
+
+.box p {
+
+    margin: 0;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+}
+
+
+.box.green {
+
+    border-top: 5px solid #198754;
+
+}
+
+
+.box.green p {
+
+    color: #087443;
+
+}
+
+
+.box.yellow {
+
+    border-top: 5px solid #ffc107;
+
+}
+
+
+.box.yellow p {
+
+    color: #856404;
+
+}
+
+
+.box.red {
+
+    border-top: 5px solid #dc3545;
+
+}
+
+
+.box.red p {
+
+    color: #b42318;
+
+}
+
+
+.total-box {
+
+    border-top: 5px solid #173b7a;
+
+}
+
+
+/* ==========================================
+   CARDS
+   ========================================== */
+
+.card {
+
+    background-color: white;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0, 0, 0, 0.06);
+
+}
+
+
+.card h2 {
+
+    margin-top: 0;
+
+    color: #173b7a;
+
+}
+
+
+.section-description {
+
+    color: #667085;
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================
+   FORM
+   ========================================== */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+
+}
+
+
+label {
+
+    display: block;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+
+}
+
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border:
+        1px solid #d0d5dd;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    background-color: white;
+
+}
+
+
+input:focus,
+select:focus {
+
+    outline: none;
+
+    border-color: #315fbb;
+
+}
+
+
+.form-buttons {
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+
+}
+
+
+button {
+
+    padding: 11px 17px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.primary-button {
+
+    background-color: #173b7a;
+
+    color: white;
+
+}
+
+
+.primary-button:hover {
+
+    background-color: #0f2b5c;
+
+}
+
+
+.demo-button {
+
+    background-color: #eef3f9;
+
+    color: #173b7a;
+
+    border:
+        1px solid #cbd5e1;
+
+}
+
+
+.demo-button:hover {
+
+    background-color: #e2e8f0;
+
+}
+
+
+/* ==========================================
+   REMINDERS
+   ========================================== */
+
+.reminder-card {
+
+    border-left:
+        6px solid #173b7a;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.reminder-card p {
+
+    color: #667085;
+
+}
+
+
+#reminderStatus {
+
+    font-weight: bold;
+
+    margin-bottom: 0;
+
+}
+
+
+/* ==========================================
+   SEARCH / FILTER
+   ========================================== */
+
+.filter-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+/* ==========================================
+   DOCUMENT CARDS
+   ========================================== */
+
+.document {
+
+    background-color: #f8fafc;
+
+    padding: 20px;
+
+    margin-top: 15px;
+
+    border-radius: 10px;
+
+    border-left: 7px solid #198754;
+
+    transition:
+        transform 0.2s;
+
+}
+
+
+.document:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.document.warning {
+
+    border-left-color: #ffc107;
+
+}
+
+
+.document.danger {
+
+    border-left-color: #dc3545;
+
+}
+
+
+.document h3 {
+
+    margin-top: 0;
+
+    color: #173b7a;
+
+}
+
+
+.document p {
+
+    margin: 7px 0;
+
+    color: #475467;
+
+}
+
+
+.document-actions {
+
+    margin-top: 15px;
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.status {
+
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+
+    margin-top: 7px;
+
+}
+
+
+.status.safe {
+
+    background-color: #dff7e8;
+
+    color: #087443;
+
+}
+
+
+.status.warning {
+
+    background-color: #fff3cd;
+
+    color: #856404;
+
+}
+
+
+.status.danger {
+
+    background-color: #f8d7da;
+
+    color: #842029;
+
+}
+
+
+.renew-button {
+
+    background-color: #198754;
+
+    color: white;
+
+}
+
+
+.renew-button:hover {
+
+    background-color: #146c43;
+
+}
+
+
+.delete-button {
+
+    background-color: #dc3545;
+
+    color: white;
+
+}
+
+
+.delete-button:hover {
+
+    background-color: #b02a37;
+
+}
+
+
+.remind-button {
+
+    background-color: #173b7a;
+
+    color: white;
+
+}
+
+
+.remind-button:hover {
+
+    background-color: #0f2b5c;
+
+}
+
+
+/* ==========================================
+   RENEWAL HISTORY
+   ========================================== */
+
+.history-item {
+
+    background-color: #f8fafc;
+
+    border-left:
+        6px solid #173b7a;
+
+    padding: 16px;
+
+    margin-top: 12px;
+
+    border-radius: 8px;
+
+}
+
+
+.history-item h3 {
+
+    margin-top: 0;
+
+    color: #173b7a;
+
+}
+
+
+.history-item p {
+
+    margin: 6px 0;
+
+    color: #475467;
+
+}
+
+
+/* ==========================================
+   EMPTY STATE
+   ========================================== */
+
+.empty-state {
+
+    text-align: center;
+
+    padding: 35px;
+
+    color: #667085;
+
+}
+
+
+.empty-state.small {
+
+    padding: 20px;
+
+}
+
+
+.empty-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+
+    text-align: center;
+
+    color: #667085;
+
+    padding: 25px;
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 850px) {
+
+    .dashboard {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .filter-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .reminder-card {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboard {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .header-content {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    header h1 {
+
+        font-size: 26px;
+
+    }
+
+
+    .header-icon {
+
+        display: none;
+
+    }
+
+}

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Vehicle Document Expiry Tracker
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="header-content">
+
+            <div>
+
+                <p class="tag">
+                    HACKATHON PROJECT
+                </p>
+
+                <h1>
+                    🚗 Vehicle Document Expiry Tracker
+                </h1>
+
+                <p>
+                    Never miss an important vehicle document expiry date.
+                </p>
+
+            </div>
+
+            <div class="header-icon">
+                🚘
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- DASHBOARD -->
+
+        <section class="dashboard-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <h2>
+                        📊 Dashboard
+                    </h2>
+
+                    <p>
+                        Quick overview of your vehicle documents
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard">
+
+
+                <div class="box total-box">
+
+                    <div class="box-icon">
+                        📄
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Total Documents
+                        </h3>
+
+                        <p id="totalCount">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="box green">
+
+                    <div class="box-icon">
+                        ✅
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Safe
+                        </h3>
+
+                        <p id="safeCount">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="box yellow">
+
+                    <div class="box-icon">
+                        ⚠️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Expiring Soon
+                        </h3>
+
+                        <p id="warningCount">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="box red">
+
+                    <div class="box-icon">
+                        🚨
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Urgent / Expired
+                        </h3>
+
+                        <p id="dangerCount">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ADD DOCUMENT -->
+
+        <section class="card">
+
+            <h2>
+                ➕ Add Vehicle Document
+            </h2>
+
+            <p class="section-description">
+                Enter the vehicle and document expiry details below.
+            </p>
+
+
+            <form id="documentForm">
+
+
+                <div class="form-grid">
+
+
+                    <div>
+
+                        <label for="vehicleNumber">
+                            Vehicle Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="vehicleNumber"
+                            placeholder="Example: TS09AB1234"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div>
+
+                        <label for="ownerName">
+                            Owner Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="ownerName"
+                            placeholder="Enter owner name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div>
+
+                        <label for="documentType">
+                            Document Type
+                        </label>
+
+                        <select
+                            id="documentType"
+                            required
+                        >
+
+                            <option value="">
+                                Select Document
+                            </option>
+
+                            <option value="Insurance">
+                                Insurance
+                            </option>
+
+                            <option value="PUC">
+                                PUC
+                            </option>
+
+                            <option value="RC">
+                                RC
+                            </option>
+
+                            <option value="Driving Licence">
+                                Driving Licence
+                            </option>
+
+                            <option value="Fitness Certificate">
+                                Fitness Certificate
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <label for="expiryDate">
+                            Expiry Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="expiryDate"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        ➕ Add Document
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="demoButton"
+                        class="demo-button"
+                    >
+                        🧪 Add Demo Data
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- REMINDERS -->
+
+        <section class="card reminder-card">
+
+            <div>
+
+                <h2>
+                    🔔 Expiry Reminders
+                </h2>
+
+                <p>
+                    Enable browser notifications to receive expiry reminders.
+                </p>
+
+            </div>
+
+
+            <div class="reminder-controls">
+
+                <button
+                    id="enableReminderButton"
+                    class="primary-button"
+                >
+                    🔔 Enable Reminders
+                </button>
+
+                <p id="reminderStatus">
+                    Reminders are currently disabled.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SEARCH AND FILTER -->
+
+        <section class="card">
+
+            <h2>
+                🔎 Find Documents
+            </h2>
+
+            <p class="section-description">
+                Search and filter your documents quickly.
+            </p>
+
+
+            <div class="filter-grid">
+
+
+                <div>
+
+                    <label for="searchBox">
+                        Search
+                    </label>
+
+                    <input
+                        type="search"
+                        id="searchBox"
+                        placeholder="Search vehicle, owner or document..."
+                    >
+
+                </div>
+
+
+
+                <div>
+
+                    <label for="statusFilter">
+                        Filter by Status
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            All Documents
+                        </option>
+
+                        <option value="safe">
+                            🟢 Safe
+                        </option>
+
+                        <option value="warning">
+                            🟡 Expiring Soon
+                        </option>
+
+                        <option value="danger">
+                            🔴 Urgent / Expired
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div>
+
+                    <label for="sortOption">
+                        Sort By
+                    </label>
+
+                    <select id="sortOption">
+
+                        <option value="nearest">
+                            Nearest Expiry
+                        </option>
+
+                        <option value="farthest">
+                            Farthest Expiry
+                        </option>
+
+                        <option value="vehicle">
+                            Vehicle Number
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- DOCUMENT LIST -->
+
+        <section class="card">
+
+            <h2>
+                📋 My Documents
+            </h2>
+
+            <p
+                id="resultCount"
+                class="section-description"
+            >
+                0 documents
+            </p>
+
+
+            <div id="documentList">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        No documents added yet
+                    </h3>
+
+                    <p>
+                        Add your first vehicle document above.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RENEWAL HISTORY -->
+
+        <section class="card">
+
+            <h2>
+                🔄 Renewal History
+            </h2>
+
+            <p class="section-description">
+                Previously renewed vehicle documents are recorded here.
+            </p>
+
+
+            <div id="renewalHistory">
+
+                <div class="empty-state small">
+
+                    <p>
+                        No renewals recorded yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            🚗 Vehicle Document Expiry Tracker
+        </p>
+
+        <p>
+            Hackathon Prototype • HTML • CSS • JavaScript
+        </p>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
